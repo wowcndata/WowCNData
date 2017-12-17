@@ -1,0 +1,229 @@
+﻿
+@{
+    ViewBag.Title = "simcraft";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<script src="~/Scripts/vue.js"></script>
+<div id="wowcndata-app" v-cloak>
+    <div class="container main">
+        <div class="wowtoken">
+            <div class="alert alert-success wowtoken-alert" role="alert">
+                <p class="wowtoken-price">所有数据更新时间:{{coreInfoData.LastUpdateString}} 时光徽章价格为:{{coreInfoData.WowToken}}金</p>
+            </div>
+        </div>
+        <div class="today-brokenisle">
+            <h2>今天的破碎群岛</h2>
+            <div class="assaults-invasions container">
+                <div class="legion-assault col-md-6">
+                    <h3 class="title-text assaults-invasions-title">军团入侵</h3>
+                    <div class="legion-assault-entry" v-for="assault in legionAssaultsData">
+                        <h4 class="legion-assault-entry-text" :data-state="assault.Started?'attacking':'incoming'">{{assault.Area}}:{{assault.Started?"进行中,剩余时间:"+assault.EndOrStartTimeSpan:" 将在"+assault.EndOrStartTimeSpan+"后开始("+assault.StartDateTime+")"}}</h4>
+                    </div>
+                </div>
+                <div class="legin-invasions col-md-6">
+                    <h3 class="title-text assaults-invasions-title">热门事件</h3>
+                    <h4 class="legion-assault-entry-text" data-state="incoming">{{coreInfoData.Hot1}}</h4>
+                    <h4 class="legion-assault-entry-text" data-state="incoming">{{coreInfoData.Hot2}}</h4>
+                    <h4 class="legion-assault-entry-text" data-state="incoming">{{coreInfoData.Hot3}}</h4>
+                </div>
+            </div>
+            <div class="buildings">
+                <div class="col-md-4 building-mage-tower no-left-padding">
+                    <h4 class="no-left-padding">法师塔 {{buildingData.MageTower.Prediction}}</h4>
+                    <div class="building-image mage-tower-img" :data-state="buildingData.MageTower.State">
+                        <div class="progress">
+                            <div class="progress-bar building-percentage-bar" role="progressbar" aria-valuemax="100" :style="{width: buildingData.MageTower.Percentage+'%'}" :data-state="buildingData.MageTower.State"></div>
+                        </div>
+                        <span class="state-description">{{buildingData.MageTower.StateText}}</span>
+                        <span class="progress-text">{{buildingData.MageTower.Value}}</span>
+                    </div>
+                    <div class="building-buff">
+                        <h3 class="label label-primary label-building-buff">{{buildingData.MageTower.Buff}}</h3>
+                        <h4 class="label-building-description">{{buildingData.MageTower.BuffDescription}}</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 building-command-center no-left-padding">
+                    <h4 class="no-left-padding">指挥中心 {{buildingData.CommandCenter.Prediction}}</h4>
+                    <div class="building-image command-center-img" :data-state="buildingData.CommandCenter.State">
+                        <div class="progress">
+                            <div class="progress-bar building-percentage-bar" role="progressbar" aria-valuemax="100" :style="{width: buildingData.CommandCenter.Percentage+'%'}" :data-state="buildingData.CommandCenter.State"></div>
+                        </div>
+                        <span class="state-description">{{buildingData.CommandCenter.StateText}}</span>
+                        <span class="progress-text">{{buildingData.CommandCenter.Value}}</span>
+                    </div>
+                    <div class="building-buff">
+                        <h3 class="label label-primary label-building-buff">{{buildingData.CommandCenter.Buff}}</h3>
+                        <h4 class="label-building-description">{{buildingData.CommandCenter.BuffDescription}}</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 building-nether-disruptor no-left-padding">
+                    <h4 class="no-left-padding">虚空干扰器 {{buildingData.NetherDisruptor.Prediction}}</h4>
+                    <div class="building-image nether-disruptor-img" :data-state="buildingData.NetherDisruptor.State">
+                        <div class="progress">
+                            <div class="progress-bar building-percentage-bar" role="progressbar" aria-valuemax="100" :style="{width: buildingData.NetherDisruptor.Percentage+'%'}" :data-state="buildingData.NetherDisruptor.State"></div>
+                        </div>
+                        <span class="state-description">{{buildingData.NetherDisruptor.StateText}}</span>
+                        <span class="progress-text">{{buildingData.NetherDisruptor.Value}}</span>
+                    </div>
+                    <div class="building-buff">
+                        <h3 class="label label-primary label-building-buff">{{buildingData.NetherDisruptor.Buff}}</h3>
+                        <h4 class="label-building-description">{{buildingData.NetherDisruptor.BuffDescription}}</h4>
+                    </div>
+                </div>
+                <div class="clearfloat"></div>
+            </div>
+        </div>
+        <div class="mythic-keystone-affix">
+            <h2 class="mythic-keystone-affix-title">史诗钥石词缀</h2>
+            <div class="affixes">
+                <div class="col-md-4 this-week">
+                    <h3 class="affix-week-title">本周</h3>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week1.Affix1.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week1.Affix1.LocaleName}}</h3>
+                        <h3 class="affix-name">4+</h3>
+                    </div>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week1.Affix2.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week1.Affix2.LocaleName}}</h3>
+                        <h3 class="affix-name">7+</h3>
+                    </div>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week1.Affix3.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week1.Affix3.LocaleName}}</h3>
+                        <h3 class="affix-name">10+</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 next-week">
+                    <h3 class="affix-week-title">下周</h3>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week2.Affix1.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week2.Affix1.LocaleName}}</h3>
+                        <h3 class="affix-name">4+</h3>
+                    </div>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week2.Affix2.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week2.Affix2.LocaleName}}</h3>
+                        <h3 class="affix-name">7+</h3>
+                    </div>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week2.Affix3.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week2.Affix3.LocaleName}}</h3>
+                        <h3 class="affix-name">10+</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 next-week-2">
+                    <h3 class="affix-week-title">下下周</h3>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week3.Affix1.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week3.Affix1.LocaleName}}</h3>
+                        <h3 class="affix-name">4+</h3>
+                    </div>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week3.Affix2.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week3.Affix2.LocaleName}}</h3>
+                        <h3 class="affix-name">7+</h3>
+                    </div>
+                    <div class="w-affix">
+                        <div class="affix-image" :data-img="mythicData.Week3.Affix3.OriginalName"></div>
+                        <h3 class="affix-name">{{mythicData.Week3.Affix3.LocaleName}}</h3>
+                        <h3 class="affix-name">10+</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    var app = null;
+    var requestPending = false;
+
+
+    $(function () {
+        $.ajaxSetup({
+            async: false
+        });
+        initializeData();
+        $.ajaxSetup({
+            async: true
+        });
+        setInterval(function () { app.updateBuildings(); app.updateLegionAssaults(); app.updateCoreInfo(); }, 60000);
+    });
+    function initializeData() {
+        var buildingData = null;
+        var affixesData = null;
+        var assaultsData = null;
+        var coreData = null;
+        $.post("../service/brokenIsle", function (data) {
+            buildingData = data;
+        });
+        $.post("../service/mythicAffixes", function (data) {
+            affixesData = data;
+        });
+        $.post("../service/legionAssaults", function (data) {
+            assaultsData = data;
+        });
+        $.post("../service/coreInfo", function (data) {
+            coreData = data;
+        });
+        app = new Vue({
+            el: "#wowcndata-app",
+            data: { buildingData: buildingData, mythicData: affixesData, legionAssaultsData: assaultsData, coreInfoData: coreData },
+            methods: {
+                updateBuildings: function () {
+                    requestPending = true;
+                    $.ajax({
+                        url: "../service/brokenIsle",
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            for(var d in data){
+                                app.buildingData[d] = data[d];
+                            }
+                        }
+                    });
+                },
+                updateMythicAffixes: function () {
+                    requestPending = true;
+                    $.ajax({
+                        url: "../service/mythicAffixes",
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            for (var d in data) {
+                                app.mythicData[d] = data[d];
+                            }
+                        }
+                    });
+                },
+                updateLegionAssaults: function () {
+                    requestPending = true;
+                    $.ajax({
+                        url: "../service/legionAssaults",
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            for (var d in data) {
+                                app.legionAssaultsData[d] = data[d];
+                            }
+                        }
+                    });
+                },
+                updateCoreInfo: function () {
+                    requestPending = true;
+                    $.ajax({
+                        url: "../service/coreInfo",
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            for (var d in data) {
+                                app.coreInfoData[d] = data[d];
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
+</script>

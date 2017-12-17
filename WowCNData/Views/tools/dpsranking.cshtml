@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "dpsranking";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<div>
+    <!-- 偷懒了 集成css吧-->
+    <div class="container">
+        <div id="dpsranking-chart" style="height:740px;margin: 20px auto;"></div>
+        <div class="dps-category">
+            <ul>
+                <li class="label label-info" style="float:left;list-style-type:none;margin-left:20px;font-size:22px;">样本范围选择:</li>
+                <li class="btn btn-success" style="float:right;list-style-type:none;margin-left:20px;width:20%" onclick="showRanking(75)">大众玩家(75%)</li>
+                <li class="btn btn-success" style="float:right;list-style-type:none;margin-left:20px;width:20%" onclick="showRanking(90)">顶级玩家(90%)</li>
+                <li class="btn btn-success" style="float:right;list-style-type:none;margin-left:20px;width:20%" onclick="showRanking(99)">菊苣(99%)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/echarts.min.js"></script>
+<script>
+    option = {
+        backgroundColor: 'grey',
+        title: {
+            x:'center',
+            text: '萨格拉斯之墓各专精DPS排行榜(@ViewData["Percent"]%,更新于'+'@ViewData["Update"])',
+            subtext: '数据来自www.warcraftlogs.com',
+            textStyle: {
+                fontSize: 24,
+                fontWeight: 'bolder',
+                color: 'black'
+            },
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+        },
+        grid: {
+            left: '2%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: [@Html.Raw(@ViewData["Spec"])],
+            axisLine:{
+                lineStyle: {
+                    color:'white',
+                }
+            },
+        },
+        series: [
+            {
+                name: '评分',
+                type: 'bar',
+                data: [@Html.Raw(ViewData["Score"])]
+            },
+        ],
+        itemStyle: {
+            normal: {
+                color: function (params) {
+                    var colorList = [@Html.Raw(ViewData["Color"])];
+                    return colorList[params.dataIndex];
+                }
+            },
+        },
+    };
+
+    var myChart = echarts.init($('#dpsranking-chart')[0]);
+    myChart.setOption(option);
+    function showRanking(percentage) {
+        window.location.href = "/tools/dpsranking?percentage=" + percentage;
+    }
+</script>

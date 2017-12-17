@@ -1,0 +1,158 @@
+﻿warlock="珑月姬"
+level=110
+race=human
+region=cn
+server=
+role=spell
+professions=tailoring=800/engineering=800
+talents=3113313
+spec=affliction
+artifact=39:0:0:0:0:915:4:916:4:917:4:918:4:919:4:920:4:921:4:922:4:923:4:924:1:925:1:926:1:927:1:928:1:929:1:999:1:1353:1:1390:1:1601:4:1602:1:1603:1:1604:21:1711:1
+crucible=1739:1778:920/1739:1779:921/1739:1779
+
+head=,id=132394,bonus_id=3529/3459/3570
+neck=,id=140899,enchant_id=5890,bonus_id=3518/1507/3336
+shoulder=,id=147186,enchant_id=5883,gem_id=130219,bonus_id=3562/1808/1497/3528
+back=,id=134408,enchant_id=5436,gem_id=130220,bonus_id=3418/1808/1592/3337
+chest=,id=147185,bonus_id=3562/1507/3336
+tabard=,id=46874
+wrist=,id=134437,bonus_id=3536/1582/3337
+hands=,id=147182,bonus_id=3563/1512/3528
+waist=,id=146998,bonus_id=3563/1512/3528
+legs=,id=147184,bonus_id=3562/1507/3336
+feet=,id=136774,gem_id=130222,bonus_id=3536/1808/1582/3337
+finger1=,id=147020,enchant_id=5429,bonus_id=3563/1527/3337
+finger2=,id=151649,enchant_id=5429,gem_id=130222,bonus_id=3459/3570
+trinket1=,id=147017,bonus_id=3562/1497/3528
+trinket2=,id=134292,bonus_id=3573/604/1582/3336
+main_hand=,id=128942,gem_id=147108/147082/147108,bonus_id=747,relic_id=3563:1517:3336/3562:1532:3337/3563:1512:3528
+
+### Gear from Bags
+#
+# 天魔头盔 (915)
+# head=,id=147183,gem_id=130222,bonus_id=3562/1808/1497/3528
+#
+# 坏女巫的帽子 (920)
+# head=,id=142296,bonus_id=3418/1537/3337
+#
+# 卡拉波神圣勋章 (141)
+# neck=,id=32757
+#
+# 警惕之眼吊坠 (900)
+# neck=,id=137536,enchant_id=5890,bonus_id=3536/1552/3337
+#
+# 普瑞达兹，萨瓦里克的杰作 (970)
+# neck=,id=132444,enchant_id=5439,gem_id=130220,bonus_id=3459/3570
+#
+# 残忍狂笑护肩 (955)
+# shoulder=,id=137503,enchant_id=5883,bonus_id=3418/1607/3337
+#
+# 塞露布拉，暗夜的双子 (970)
+# shoulder=,id=146666,enchant_id=5883,gem_id=130219/130219/130219,bonus_id=3459/3570
+#
+# 恋蛛大氅 (60)
+# back=,id=151414
+#
+# 播种与收获 (970)
+# back=,id=144364,enchant_id=5436,bonus_id=3529/3459/3570
+#
+# 阿兹亚基斗篷 (920)
+# back=,id=138373,enchant_id=5436,gem_id=130222,bonus_id=3516/1808/1517/3337
+#
+# 天魔斗篷 (915)
+# back=,id=147181,enchant_id=5436,bonus_id=3562/1497/3528
+#
+# 窒息硫磺斗篷 (930)
+# back=,id=146984,enchant_id=5436,bonus_id=3563/1512/3528
+#
+# 心火，玉珑之息 (600)
+# back=,id=102246,enchant_id=4423,gem_id=76694,upgrade=4
+#
+# 奥术师的共振长袍 (930)
+# chest=,id=134415,bonus_id=3536/1582/3337
+#
+# 阿兹亚基华服 (900)
+# chest=,id=138320,bonus_id=3516/1497/3336
+#
+# 收割大师 (970)
+# chest=,id=151821,bonus_id=1811/3570
+#
+# 光明使者战袍 (80)
+# tabard=,id=52252
+#
+# 贪婪信徒护腕 (935)
+# wrist=,id=147000,bonus_id=3563/1517/3336
+#
+# 丝绸血腥手套 (935)
+# hands=,id=133609,bonus_id=3418/1587/3337
+#
+# 蕾瑟塔蒂丝的能量之索 (970)
+# waist=,id=132457,bonus_id=3459/3570
+#
+# 激荡之谜腰带 (920)
+# waist=,id=146999,bonus_id=3562/1502/3336
+#
+# 融合厌恶裹腿 (935)
+# legs=,id=146992,bonus_id=3563/1517/3336
+#
+# 黑暗之门柱石 (970)
+# legs=,id=132357,bonus_id=1811/3570
+#
+# 播烬者便鞋 (930)
+# feet=,id=146986,bonus_id=3563/1512/3528
+#
+# 耀眼深红便鞋 (865)
+# feet=,id=142298,bonus_id=3452/1482/3336
+#
+# 黑暗前途指环 (930)
+# finger1=,id=142173,enchant_id=5429,gem_id=130222,bonus_id=3536/1808/1542/3337
+#
+# 格斗士的重击指环 (630)
+# finger1=,id=118907
+#
+# 执政官的印戒 (925)
+# finger1=,id=147195,enchant_id=5429,bonus_id=3562/1507/3528
+#
+# 塞弗斯的秘密 (970)
+# finger1=,id=132452,enchant_id=5427,gem_id=130219,bonus_id=1811/3570
+#
+# 萨洛拉丝的黑暗之击 (970)
+# finger1=,id=132378,enchant_id=5429,gem_id=130222,bonus_id=1811/3570
+#
+# 肯瑞托徽记 (200)
+# finger1=,id=40585
+#
+# 魔导大师的紫罗兰印戒 (875)
+# finger1=,id=142469
+#
+# 瓦格里晋升玺戒 (935)
+# finger1=,id=133679,bonus_id=3418/1587/3337
+#
+# 地狱火文书 (910)
+# trinket1=,id=137485,bonus_id=3573/1562/3528
+#
+# 法拉米尔的禁忌魔典 (905)
+# trinket1=,id=140800,bonus_id=3518/1502/3528
+#
+# 夜之子研究员的药瓶 (915)
+# trinket1=,id=134292,bonus_id=3573/42/603/1577/3336
+#
+# 迷时神器 (496)
+# trinket1=,id=103678
+#
+# 涨潮符咒 (930)
+# trinket1=,id=147002,bonus_id=3563/1512/3528
+#
+# 基尔加丹的炽燃决心 (970)
+# trinket1=,id=144259,bonus_id=3459/3570
+#
+# 虚灵之瓶 (930)
+# trinket1=,id=142166,bonus_id=3573/1527/3337
+#
+# 烟网蜘蛛的眼球 (60)
+# trinket1=,id=13213
+#
+scale_only=crit,haste,mastery,vers,intellect
+target_error=0
+iterations=10000
+override.bloodlust=1

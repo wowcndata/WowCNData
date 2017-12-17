@@ -1,0 +1,81 @@
+﻿@using WowCNData.Helper
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<div class="container">
+    <h2>免费CD君</h2>
+    <div class="cd-container">
+        <div class="panel panel-danger col-md-5 cd-faction-panel">
+            <div class="panel-heading">在线部落CD君</div>
+            <div class="panel-body">
+                <ul>
+                    @if (StaticData.HordeCDLastUpdate.AddSeconds(20 * 60) > DateTime.Now)
+                    {
+                        if (StaticData.HordeCDAvailable.Count > 0)
+                        {
+                            foreach (var p in StaticData.HordeCDAvailable)
+                            {
+                                <li>
+                                    <div class="btn btn-success btn-cd" whisper-to="@p">@p</div>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li>当前无CD君在线(也可能数据服务器出了问题 QAQ)</li>
+                        }
+                    }
+                    else
+                    {
+                        <li>数据服务器出现了问题，无法获取CD君的状态</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-info col-md-5 col-md-offset-2 cd-faction-panel">
+            <div class="panel-heading">在线联盟CD君</div>
+            <div class="panel-body">
+                <ul>
+                    <li>CD君功能正在测试中，暂不支持联盟阵营</li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfloat"></div>
+        <div class="cd-info-copy">
+            <div class="panel panel-success col-md-12 cd-info-copy-panel">
+                <div class="panel-heading">选中你喜爱的CD君 按照最下方的提示运行对应的宏命令</div>
+                <div class="panel-body">
+                    <div class="input-group cd-input-group">
+                        <span class="input-group-addon" id="basic-addon3">进本前运行宏</span>
+                        <input type="text" class="form-control" id="before-getin"><br />
+                    </div>
+                    <div class="input-group cd-input-group">
+                        <span class="input-group-addon" id="basic-addon3">进本后运行宏</span>
+                        <input type="text" class="form-control" id="after-getin"><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro">
+            <ul>
+                <li class="no-li-dot cd-li">首先感谢各位CD君的免费付出！</li>
+                <li class="no-li-dot cd-li">免费CD的详细说明见<a href="http://bbs.nga.cn/read.php?tid=11933066&_ff=7">点我查看</a></li>
+                <li class="no-li-dot cd-li">简单使用说明:</li>
+                <li>1.到副本门口</li>
+                <li>2.点击上方可用的CD君按钮</li>
+                <li>3.进本复制[进本前运行宏]内容到聊天框并按回车</li>
+                <li>4.进本后复制[进本后运行宏]内容内容到聊天框并按回车</li>
+                <li>5.Enjoy!</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".btn-cd").click(function () {
+            var name = $(this).attr("whisper-to");
+            var getinKey = "1";
+            if(name == "月色下的乞丐-辛达苟萨") getinKey="44296";
+            $("#before-getin").val("/W " + name + " " + getinKey);
+            $("#after-getin").val("/W " + name + " 0");
+        });
+    </script>

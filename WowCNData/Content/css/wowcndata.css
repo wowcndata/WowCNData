@@ -1,0 +1,445 @@
+﻿[v-cloak] {
+    display: none !important;
+}
+
+body {
+    min-width: 372px;
+    background-color:rgba(222, 222, 222, 0.5)
+}
+body-black-theme {
+    min-width: 372px;
+    background-color: black;
+    color: white;
+}
+.clearfloat {
+    clear:both;
+}
+.no-li-dot {
+    list-style-type: none;
+}
+#simcraft-import-container, #simcraft-export-container {
+    text-align: center;
+    position: relative;
+    height: 600px;
+}
+
+.simcraft-tip {
+    font-size: 20px;
+}
+
+.title-text {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.center-div {
+    margin: 0 auto;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#run-button-container {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+#simcraft-loading-gif {
+    position: absolute;
+    display: none;
+    margin: 5px 0 0 16px;
+    opacity: 1;
+}
+
+#run-simcraft {
+    width: 100px;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+#simcraft-input-area, #simcraft-export-area {
+    margin: 20px 0;
+}
+
+.none-resize-textarea {
+    resize: none;
+}
+
+.my-checkbox-label {
+    height: 32px;
+    width: 32px;
+    background-color: white;
+    border: 5px solid;
+    border-color: gray;
+    cursor: pointer;
+    transition: border-color ease 0.2s;
+    float: left;
+}
+
+.checkbox-container {
+    position: relative;
+    float: left;
+    padding: 0;
+}
+
+.my-checkbox-checkbox {
+    display: none;
+}
+
+.my-checkbox-desc {
+    float: left;
+    font-size: 16px;
+    margin-top: 6px;
+    margin-left: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+input[type=checkbox]:checked + label {
+    background-color: #0094ff;
+    border-color: #0094ff;
+}
+
+input[type=checkbox] + label::before {
+    top: 18px;
+    left: 4px;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0px;
+    width: 4px;
+    background: #fff;
+    display: inline-block;
+    transform-origin: left top;
+    content: '';
+    transition: opacity ease 0.5s;
+    border-color: white;
+    background: white;
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + label::before {
+    height: 12px;
+    transition: height ease 0.2s;
+}
+
+input[type=checkbox] + label::after {
+    top: 27px;
+    left: 13px;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0px;
+    width: 4px;
+    background: #fff;
+    display: inline-block;
+    transform-origin: left top;
+    content: '';
+    transition: opacity ease 0.5s;
+    border-color: white;
+    background: white;
+    transform: rotate(-135deg)
+}
+
+input[type=checkbox]:checked + label::after {
+    height: 22px;
+    transition: height ease 0.2s;
+    transition-delay: 0.2s;
+}
+
+.my-checkbox-desc {
+    float: left;
+}
+/* INDEX */
+
+
+.label-building-buff {
+    font-size: 16px;
+}
+
+.label-building-description {
+    font-size: 16px;
+}
+
+.building-buff {
+    margin-top: 8px;
+}
+
+.no-left-padding {
+    padding-left: 0;
+}
+
+.state-description {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.building-image {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 12px;
+}
+
+.building-percentage-bar[data-state='1'] {
+    background-color: rgba(255, 247, 91, 0.7);
+}
+
+.building-percentage-bar[data-state='2'] {
+    background-color: green;
+}
+
+.building-percentage-bar[data-state='3'] {
+    background-color: rgba(255, 41, 41, 0.7);
+}
+
+.building-percentage-bar[data-state='4'] {
+    background-color: rgba(255, 255, 255, 0.00);
+}
+
+.mage-tower-img[data-state='1'] {
+    background-image: url(/Content/images/buildings/MageTowerUnderConstruction.jpg);
+}
+
+.mage-tower-img[data-state='2'] {
+    background-image: url(/Content/images/buildings/MageTowerActive.jpg);
+}
+
+.mage-tower-img[data-state='3'] {
+    background-image: url(/Content/images/buildings/MageTowerUnderAttack.jpg);
+}
+
+.mage-tower-img[data-state='4'] {
+    background-image: url(/Content/images/buildings/MageTowerDestroyed.jpg);
+}
+
+.command-center-img[data-state='1'] {
+    background-image: url(/Content/images/buildings/CommandCenterUnderConstruction.jpg);
+}
+
+.command-center-img[data-state='2'] {
+    background-image: url(/Content/images/buildings/CommandCenterActive.jpg);
+}
+
+.command-center-img[data-state='3'] {
+    background-image: url(/Content/images/buildings/CommandCenterUnderAttack.jpg);
+}
+
+.command-center-img[data-state='4'] {
+    background-image: url(/Content/images/buildings/CommandCenterDestroyed.jpg);
+}
+
+.nether-disruptor-img[data-state='1'] {
+    background-image: url(/Content/images/buildings/NetherDisruptorUnderConstruction.jpg);
+}
+
+.nether-disruptor-img[data-state='2'] {
+    background-image: url(/Content/images/buildings/NetherDisruptorActive.jpg);
+}
+
+.nether-disruptor-img[data-state='3'] {
+    background-image: url(/Content/images/buildings/NetherDisruptorUnderAttack.jpg);
+}
+
+.nether-disruptor-img[data-state='4'] {
+    background-image: url(/Content/images/buildings/NetherDisruptorDestroyed.jpg);
+}
+
+.progress {
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.building-percentage-bar {
+    opacity: 1;
+    bottom: 10px;
+}
+
+.progress-text {
+    color: white;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+/* MYTHIC KEYSTONE */
+.affix-image[data-img='Raging'] {
+    background-image: url(/Content/images/affixes/Raging.jpg);
+}
+.affix-image[data-img='Bursting'] {
+    background-image: url(/Content/images/affixes/Bursting.jpg);
+}
+.affix-image[data-img='Tyrannical'] {
+    background-image: url(/Content/images/affixes/Tyrannical.jpg);
+}
+.affix-image[data-img='Teeming'] {
+    background-image: url(/Content/images/affixes/Teeming.jpg);
+}
+.affix-image[data-img='Volcanic'] {
+    background-image: url(/Content/images/affixes/Volcanic.jpg);
+}
+.affix-image[data-img='Bolstering'] {
+    background-image: url(/Content/images/affixes/Bolstering.jpg);
+}
+.affix-image[data-img='Fortified'] {
+    background-image: url(/Content/images/affixes/Fortified.jpg);
+}
+.affix-image[data-img='Relentless'] {
+    background-image: url(/Content/images/affixes/Relentless.jpg);
+}
+.affix-image[data-img='Necrotic'] {
+    background-image: url(/Content/images/affixes/Necrotic.jpg);
+}
+.affix-image[data-img='Skittish'] {
+    background-image: url(/Content/images/affixes/Skittish.jpg);
+}
+.affix-image[data-img='Sanguine'] {
+    background-image: url(/Content/images/affixes/Sanguine.jpg);
+}
+.affix-image[data-img='Explosive'] {
+    background-image: url(/Content/images/affixes/Explosive.jpg);
+}
+.affix-image[data-img='Quaking'] {
+    background-image: url(/Content/images/affixes/Quaking.jpg);
+}
+.affix-image[data-img='Grievous'] {
+    background-image: url(/Content/images/affixes/Grievous.jpg);
+}
+.affix-image {
+    border-radius: 28px;
+    background-size: 100%;
+    height: 56px;
+    width: 56px;
+    float: left;
+    margin-right:8px;
+    text-align:center;
+}
+
+.affix-name {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.w-affix {
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+.mythic-keystone-affix-title{
+    margin-top:8px;
+}
+/*INS ASS*/
+.assaults-invasions {
+    text-align: center;
+}
+.assaults-invasions-title {
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    padding: 2px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.legion-assault-entry-text[data-state="incoming"] {
+    text-align: left;
+    background-color: #dff0d8;
+    padding: 2px;
+    color: #356635;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #d6e9c6;
+}
+.legion-assault-entry-text[data-state="attacking"] {
+    text-align: left;
+    background-color: #f2dede;
+    padding: 2px;
+    color: #953b39;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #eed3d7;
+}
+.assaults-invasions, .legion-assault, .legin-invasions {
+    padding: 8px;
+    
+}
+.this-week, .next-week, .next-week-2{
+    border-color: #bce8f1;
+    border-style: dashed;
+    border-width: 0 1px 0 0;
+    text-align: center;
+}
+.next-week-2 {
+    border-right-width:0;
+}
+.affix-week-title {
+    margin-bottom: 12px;
+    margin-top: 8px;
+}
+.w-affix {
+    background-color: #d9edf7;
+    padding:10px;
+}
+/*TOKEN*/
+.wowtoken-price{
+    font-size:16px;
+    text-align:center;
+}
+.wowtoken-alert{
+    padding:6px;
+}
+/*CD*/
+.cd-faction-panel{
+    padding:0;
+    height:400px;
+}
+.btn-cd{
+    margin:8px;
+    width:200px;
+}
+.cd-li{
+    line-height:32px;
+}
+.cd-input-group{
+    margin:16px;
+}
+.cd-info-copy-panel{
+    padding:0;
+}
+/* BM */
+.bmbtn-search{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.bm-panel{
+    padding:0;
+}
+.bm-hot-item {
+    font-size: 16px;
+    display: block;
+    list-style-type: none;
+    padding-left: 0;
+    padding-right:0;
+    margin:10px 20px 0 20px;
+}
+.bm-container ul{
+    padding:0;
+}

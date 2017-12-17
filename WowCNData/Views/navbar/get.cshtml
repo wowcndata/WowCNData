@@ -1,0 +1,24 @@
+﻿@using WowCNData.Models
+@model NavBarModel
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">@Model.Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                @foreach (var subItems in Model.SubItems)
+                {
+                    <li class="@subItems.Active @subItems.Enabled"><a href="@subItems.Url">@subItems.Text</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

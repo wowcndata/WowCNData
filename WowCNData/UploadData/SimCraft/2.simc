@@ -1,0 +1,197 @@
+﻿deathknight="涩琪宝宝"
+level=110
+race=blood_elf
+region=cn
+server=
+role=attack
+professions=alchemy=800/herbalism=800
+talents=3211331
+spec=unholy
+artifact=16:0:0:0:0:149:1:150:1:151:1:152:1:153:1:154:1:156:4:157:4:158:4:262:4:263:1:264:4:265:4:266:4:267:4:1119:4:1333:1:1361:1:1489:4:1490:1:1491:1:1492:16:1629:1
+crucible=1739:1770/1739:1774/1739:1780
+
+head=,id=142126,bonus_id=3418/1557/3337
+neck=,id=147014,enchant_id=5890,bonus_id=3562/1512/3337
+shoulder=,id=142201,gem_id=151583,bonus_id=3418/1808/1562/3337
+back=,id=147122,enchant_id=5434,bonus_id=3562/1497/3528
+chest=,id=147121,bonus_id=3562/1507/3336
+wrist=,id=132448,bonus_id=3459/3570
+hands=,id=147123,enchant_id=5444,bonus_id=3562/1507/3336
+waist=,id=147429,bonus_id=3562/1507/3336
+legs=,id=147125,bonus_id=3562/1502/3336
+feet=,id=147059,bonus_id=3562/1497/3528
+finger1=,id=134540,enchant_id=5428,bonus_id=3418/1572/3336
+finger2=,id=151640,enchant_id=5429,gem_id=151584,bonus_id=1811/3570
+trinket1=,id=121287,bonus_id=3573/604/1587/3337
+trinket2=,id=140806,bonus_id=3516/1487/1813
+main_hand=,id=128403,enchant_id=3368,gem_id=142307/147110/136718,bonus_id=718,relic_id=3536:1542:3337/3562:1502:3336/3418:1597:3337
+
+### Gear from Bags
+#
+# 守陵者面甲 (920)
+# head=,id=147124,bonus_id=3562/1502/3336
+#
+# 饱经风霜的渔帽 (10)
+# head=,id=33820
+#
+# 黑锋烈士的执着 (970)
+# head=,id=132459,bonus_id=3459/3570
+#
+# 死亡进军 (970)
+# head=,id=144280,bonus_id=3459/3570
+#
+# 夺牙系绳 (920)
+# neck=,id=147013,enchant_id=5889,bonus_id=3562/1502/3336
+#
+# 普瑞达兹，萨瓦里克的杰作 (970)
+# neck=,id=132444,enchant_id=5889,gem_id=130220,bonus_id=3529/3459/3570
+#
+# 颅花的止血术 (970)
+# shoulder=,id=144281,enchant_id=5883,bonus_id=1811/3570
+#
+# 守陵者肩甲 (930)
+# shoulder=,id=147126,enchant_id=5931,bonus_id=3562/1512/3337
+#
+# 黑鸦领主披风 (935)
+# back=,id=136770,enchant_id=5434,bonus_id=3418/1587/3337
+#
+# 影羽披风 (935)
+# back=,id=136977,enchant_id=5434,bonus_id=3536/1587/3337
+#
+# 阿彻鲁斯披风 (970)
+# back=,id=132376,enchant_id=5434,bonus_id=3529/3459/3570
+#
+# 守护圣徒长袍 (77)
+# chest=,id=21663
+#
+# 夺灵者的腐蚀 (970)
+# chest=,id=151795,bonus_id=1811/3570
+#
+# 冷酷之心 (970)
+# chest=,id=151796,bonus_id=1811/3570
+#
+# 曙光之天界胸甲 (935)
+# chest=,id=151576,bonus_id=1705/3408/3609/600/3608
+#
+# 夏日天空战袍 (1)
+# tabard=,id=35279
+#
+# 传送卫士腕甲 (920)
+# wrist=,id=134362,gem_id=130220,bonus_id=3536/1808/1582/3337
+#
+# 灵媒腕甲 (915)
+# wrist=,id=133632,bonus_id=3536/1567/3336
+#
+# 布伦达尔的镣铐 (970)
+# wrist=,id=132365,bonus_id=1811/3570
+#
+# 图拉旺的寒霜腕轮 (970)
+# wrist=,id=132458,bonus_id=3459/3570
+#
+# 碎地者之握 (920)
+# hands=,id=147062,gem_id=130246,bonus_id=3562/1808/1502/3336
+#
+# 裂魂者的重型腰带 (930)
+# waist=,id=147072,bonus_id=3562/1512/3336
+#
+# 库尔迪拉的新意志 (970)
+# waist=,id=132366,bonus_id=3459/3570
+#
+# 邪能魔法护腰 (930)
+# waist=,id=152380,bonus_id=3614/1472/3528
+#
+# 瑞苏的不竭勇气 (970)
+# waist=,id=146667,gem_id=130220/130220/130220,bonus_id=3459/3570
+#
+# 血魔的效忠 (970)
+# waist=,id=132367,bonus_id=1811/3570
+#
+# 冰寒冻雨护腰 (935)
+# waist=,id=147071,bonus_id=3562/1517/3337
+#
+# 血骨傀儡的腿甲 (970)
+# legs=,id=132453,bonus_id=1811/3570
+#
+# 配偶的冰冷核心 (970)
+# legs=,id=144293,bonus_id=3459/3570
+#
+# 坚定净化者战靴 (935)
+# feet=,id=147060,bonus_id=3562/1517/3337
+#
+# 阿格拉玛的步伐 (970)
+# feet=,id=132443,bonus_id=3459/3570
+#
+# 灌魔珊瑚指环 (930)
+# finger1=,id=134532,enchant_id=5428,bonus_id=3536/1582/3337
+#
+# 纳沙塔尔帝国印戒 (930)
+# finger1=,id=134525,enchant_id=5428,bonus_id=3536/1582/3337
+#
+# 蔑视指轮 (915)
+# finger1=,id=134490,enchant_id=5428,bonus_id=3418/1567/3337
+#
+# 记录之镜指环 (935)
+# finger1=,id=137533,enchant_id=5428,bonus_id=3536/1587/3337
+#
+# 塞弗斯的秘密 (970)
+# finger1=,id=132452,enchant_id=5428,gem_id=130246,bonus_id=3459/3570
+#
+# 死灵狂想家的印记 (970)
+# finger1=,id=137223,enchant_id=5428,bonus_id=3459/3570
+#
+# 不稳定的奥术水晶 (865)
+# trinket1=,id=141482,bonus_id=3466/1477/3336
+#
+# 阴影月刃 (915)
+# trinket1=,id=147012,gem_id=151583,bonus_id=3562/1808/1497/3528
+#
+# 干涸的法力水晶 (920)
+# trinket1=,id=134322,bonus_id=3573/605/1582/3336
+#
+# 暗月套牌：不朽 (900)
+# trinket1=,id=128711,bonus_id=689/600/679
+#
+# 勇气号角 (910)
+# trinket1=,id=133642,bonus_id=3418/1562/3337
+#
+# 狼群之饥 (900)
+# trinket1=,id=136975,bonus_id=3418/1552/3336
+#
+# 不稳定的奥术水晶 (865)
+# trinket1=,id=141482,bonus_id=1477/3336
+#
+# 星界炼金石 (935)
+# trinket1=,id=151607,bonus_id=3609/600/3608
+#
+# 巨兽之饥 (925)
+# trinket1=,id=147023,bonus_id=3562/1507/3336
+#
+# 阿克蒙德的重生之恨 (970)
+# trinket1=,id=144249,bonus_id=1811/3570
+#
+# 基尔加丹的炽燃决心 (970)
+# trinket1=,id=144259,bonus_id=3529/3459/3570
+#
+# 影之哀伤 (284)
+# main_hand=,id=49623
+#
+# 无底深渊之剑 (346)
+# main_hand=,id=133219,enchant_id=3847,bonus_id=615/3585,drop_level=110
+#
+# 雷霆之怒，逐风者的祝福之剑 (80)
+# main_hand=,id=19019,enchant_id=3370
+#
+# 龟裂的塔布羊骨镰 (380)
+# main_hand=,id=152860
+#
+# 珠宝鱼竿 (15)
+# main_hand=,id=45992
+#
+# 炽燃魔柄长剑 (735)
+# main_hand=,id=124385,enchant_id=3368,bonus_id=1799/565/1517/3442,upgrade=2
+#
+calculate_scale_factors=1
+scale_only=crit,haste,mastery,vers,strength
+target_error=0
+iterations=10000
+override.bloodlust=1

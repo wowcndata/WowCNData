@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<div class="container">
+    <h2>黑市拍卖行</h2>
+    <div class="bm-container">
+        <div class="panel panel-info col-md-8 bm-panel">
+            <div class="panel-heading">物品查询:@ViewData["Name"]</div>
+            <div class="panel-body">
+                <form method="post" action="/blackmarket" id="bmform">
+                    <p>输入物品或服务器名字:</p>
+                    <input id="bminput" type="text" name="name" class="form-control" placeholder="支持模糊查询" />
+                    <input type="submit" class="btn btn-info col-md-2 col-md-offset-5 bmbtn-search" value="查询黑市" />
+                </form>
+                    @if (ViewData["Data"] != null)
+                    {
+                        <table class="table result-table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>物品</th>
+                                    <th>服务器</th>
+                                    <th>最快结束</th>
+                                </tr>
+                            </thead>
+                            <tbody id="result-table-body">
+                                @foreach (var d in (List<WowCNData.Helper.BlackMarket.BMData>)ViewData["Data"])
+                                {
+                                    <tr>
+                                        <td>@d.Name</td>
+                                        <td>@d.Realm</td>
+                                        <td>@d.TimeLeft</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+            </div>
+        </div>
+        <div class="panel panel-info col-md-offset-1 col-md-3 bm-panel">
+            <div class="panel-heading">热门查询</div>
+            <div class="panel-body">
+                <ul>
+                    <li onclick="Submit('迅捷祖利安猛虎')" class="btn btn-success bm-hot-item">迅捷祖利安猛虎</li>
+                    <li onclick="Submit('神圣玛瑙云端翔龙缰绳')" class="btn btn-success bm-hot-item">神圣玛瑙云端翔龙缰绳</li>
+                    <li onclick="Submit('无畏')" class="btn btn-success bm-hot-item">无畏套装系列</li>
+                    <li onclick="Submit('霜火')" class="btn btn-success bm-hot-item">霜火套装系列</li>
+                    <li onclick="Submit('米米尔隆的头部')" class="btn btn-success bm-hot-item">米米尔隆的头部</li>
+                    <li onclick="Submit('无敌的缰绳')" class="btn btn-success bm-hot-item">无敌的缰绳</li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="intro">
+            <p>注意:</p>
+            <ul>
+                <li>1.为减少服务器压力,每天23:10-23:50无法查询数据</li>
+                <li>2.不保证数据的准确性和时效性</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function Submit(value) {
+        $("#bminput").val(value);
+        $("#bmform").submit();
+    }
+</script>

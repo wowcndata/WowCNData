@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "simcraft";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<h2 class="title-text">SimCraft 在线版</h2>
+<h4 class="title-text">SimCraft已更新到最新测试版本。往后网站将同步使用最新的测试版SimCraft.(下方查看更新时间)</h4>
+<a style="text-align:center;display:block;margin:0" href="/tools/dpsranking">点我感受菊苣的力量！</a>
+<div class="container">
+    <div class="col-md-6" id="simcraft-import-container">
+        <label class="label label-primary simcraft-tip">粘贴SimcAddon导出信息</label>
+        <textarea class="form-control none-resize-textarea" id="simcraft-input-area" rows="24"></textarea>
+        <div class="center-div col-md-12">
+            <div class="simcraft-options col-md-12">
+                <div class="checkbox-container col-md-6">
+                    <input type="checkbox" id="enable-scaling" class="my-checkbox-checkbox" />
+                    <label for="enable-scaling" class="my-checkbox-label"></label>
+                    <label class="my-checkbox-desc" for="enable-scaling">计算属性权重</label>
+                </div>
+                <div class="checkbox-container col-md-6">
+                    <input type="checkbox" id="enable-bloodlust" class="my-checkbox-checkbox" checked />
+                    <label for="enable-bloodlust" class="my-checkbox-label"></label>
+                    <label class="my-checkbox-desc" for="enable-bloodlust">启用嗜血/英勇Buff</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" id="simcraft-export-container">
+        <label class="label label-primary simcraft-tip">SimCraft运行结果</label>
+        <textarea class="form-control none-resize-textarea" id="simcraft-export-area" rows="24"></textarea>
+    </div>
+    <div class="center-div col-md-12">
+        <div id="run-button-container">
+            <img src="../Content/gif/loading.gif" id="simcraft-loading-gif" />
+            <button class="btn btn-success" id="run-simcraft">运行模拟!</button>
+        </div>
+    </div>
+    <div class="intro">
+        <p>说明:</p>
+        <ul>
+            <li>SimCraft插件下载地址(为安全,请自行查毒):<a href="~/download/addons/Simulationcraft-v1.8.3.zip">Simulationcraft-v1.8.3</a> (PC)SimCraft版本: 7.3.0 nightly 3(2017.11.16发布)。<a href="http://downloads.simulationcraft.org/simc-730-03-win64-4307e5bea.7z">原版下载</a></li>
+            <li>使用方法:安装SimCraft插件后，聊天框输入/simc即可导出角色信息，复制出来粘贴到网页左边的导入框，点击模拟即可。</li>
+            <li>为降低服务器压力,每次最多同时运行1个模拟。如果在模拟运行中结果突然中断，一般是管理员正在上传新网站内容。</li>
+        </ul>
+
+    </div>
+</div>
+<script>
+    var globalInternal;
+    var outputArea = $("#simcraft-export-area");
+    var buttonRun = $("#run-simcraft");
+    var simcPending = false;
+    $(function () {
+        $("#run-simcraft").click(function () {
+            animButtonEffect("#run-simcraft");
+        });
+    });
+    function animButtonEffect(button) {
+        var target = $(button);
+        if (target.hasClass("wowdata-fx-loading")) return;
+        target.addClass("wowdata-fx-loading");
+        target.attr("disabled", "disabled");
+        target.animate({ width: "150px", paddingLeft: "48px" }, 300, function () {
+            $("#simcraft-loading-gif").css("display", "inline");
+            submitSimCraftRequest();
+        });
+    }
+    function stopAnimButtonEffect(button) {
+        var target = $(button);
+        if (!target.hasClass("wowdata-fx-loading")) return;
+        target.removeAttr("disabled");
+        $("#simcraft-loading-gif").css("display", "none");
+        target.animate({ width: "100px", paddingLeft: "12px" }, 300, function () {
+            target.removeClass("wowdata-fx-loading");
+        });
+    }
+    function submitSimCraftRequest() {
+        var content = $("#simcraft-input-area").val();
+        var enableScaling = $("#enable-scaling").get(0).checked;
+        var enableBloodlust = $("#enable-bloodlust").get(0).checked;
+        $.ajax({
+            url:"../service/simcraft",
+            type: "POST",
+            data: { operation: "start", content: content, enableScaling: enableScaling, enableBloodlust: enableBloodlust },
+            success: function (data) {
+                if (data.error == 1) {
+                    setOutputText(data.message);
+                    stopAnimButtonEffect("#run-simcraft");
+                    return;
+                }
+                buttonRun.text("正在模拟...");
+                simcPending = false;
+                getSimCraftProgress();
+
+            }
+        });
+    }
+    function setOutputText(text) {
+        if (text == "") return;
+        outputArea.val(text);
+    }
+    function appendOutputText(text) {
+        outputArea.val(outputArea.val() + text);
+    }
+    function getSimCraftProgress() {
+        setOutputText("正在接收模拟结果");
+        globalInternal = setInterval(function () {
+            if (simcPending) return;
+            simcPending = true;
+            $.ajax({
+                url: "../service/progress",
+                type: "POST",
+                dataType:"json",
+                success: function (data) {
+                    simcPending = false;
+                    if(data.error == 1){
+                        setOutputText(data.message);
+                        clearInterval(globalInternal);
+                        stopAnimButtonEffect("#run-simcraft");
+                        buttonRun.text("运行模拟!");
+                        return;
+                    }
+                    if (!data.completed) {
+                        setOutputText(data.message);
+                    } else {
+                        if (data.report == "") setOutputText("没有报告，可能输入有误或服务器主动结束了模拟进程。");
+                        else setOutputText(data.report);
+                        clearInterval(globalInternal);
+                        stopAnimButtonEffect("#run-simcraft");
+                        buttonRun.text("运行模拟!");
+                        return;
+                    }
+                }
+            });
+        }, 2500);
+    }
+</script>
